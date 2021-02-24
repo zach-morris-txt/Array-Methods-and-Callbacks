@@ -6,15 +6,16 @@ import { fifaData } from './fifa.js';
 Practice accessing data by console.log-ing the following pieces of data note, you may want to filter the data first 😉*/
 
 //(a) Home Team name for 2014 world cup final
-
+const homeTeam2014 = fifaData.filter(item => item.Year > 2013);
+console.log(homeTeam2014['Home Team Name']);
 //(b) Away Team name for 2014 world cup final
-
+console.log(homeTeam2014['Away Team Name']);
 //(c) Home Team goals for 2014 world cup final
-
+console.log(homeTeam2014['Home Team Goals']);
 //(d) Away Team goals for 2014 world cup final
-
+console.log(homeTeam2014['Away Team Goals']);
 //(e) Winner of 2014 world cup final */
-
+//EDIT: console.log(homeTeam2014[''])
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
@@ -24,10 +25,11 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
+function getFinals(/* code here */fifaData) {
    /* code here */
+   const arrayFinals = fifaData.filter(item => item.Stage.includes('Final'));
+   return arrayFinals;
 }
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -36,8 +38,11 @@ Use the higher-order function called getYears to do the following:
 2. Receive a callback function getFinals from task 2 
 3. Return an array called years containing all of the years in the getFinals data set*/
 
-function getYears(/* code here */) {
+function getYears(/* code here */arrayFinals, getFinals) {
     /* code here */
+    const years = [];
+    arrayFinals.forEach(item => years.push(item.Year))
+    return years;
 }
 
 
@@ -49,8 +54,23 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
+function getWinners(/* code here */arrayFinals, getFinals) {
     /* code here */
+    const winners = [];
+    function findWinner(arrayFinals, getFinals, winners){
+            for(i = 0; i < arrayFinals.length; i++){
+                function calculateHomeDifference(arrayFinals){
+                    let homeWinner = (arrayFinals[i]['Home Team Goals'] - arrayFinals[i]['Away Team Goals']);
+                    return homeWinner;
+                }
+                if(homeWinner > 0){
+                winners.push['Home Team Name'];
+                }
+                else{
+                winners.push['Away Team Name'];
+                }
+            }
+        }
 }
 
 
