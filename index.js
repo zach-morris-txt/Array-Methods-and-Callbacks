@@ -15,7 +15,7 @@ console.log(homeTeam2014['Home Team Goals']);
 //(d) Away Team goals for 2014 world cup final
 console.log(homeTeam2014['Away Team Goals']);
 //(e) Winner of 2014 world cup final */
-//EDIT: console.log(homeTeam2014[''])
+//EDIT, Relevant to Future Function Code: console.log(homeTeam2014[''])
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
